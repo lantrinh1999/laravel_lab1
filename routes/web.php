@@ -16,3 +16,9 @@ Route::get('/', function () {
 });
 
 Route::get('hello', 'HelloController@index');
+
+Route::get('user/{name?}', function ($name = null) {
+    return $name;
+});
+
+Route::get('product', 'ProductController@index');
