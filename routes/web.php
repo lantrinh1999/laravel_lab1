@@ -16,3 +16,11 @@ Route::get('/', function () {
 });
 
 Route::get('hello', 'HelloController@index');
+
+Route::get('input', 'SumController@sumView')->name('sum-view');
+Route::post('sum', 'SumController@sum')->name('sum');
+
+//student
+
+Route::get('students', 'StudentController@index')->name('students');
+Route::get('classes', 'ClassRoomController@index')->name('classes');
