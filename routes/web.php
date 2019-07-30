@@ -24,3 +24,19 @@ Route::post('sum', 'SumController@sum')->name('sum');
 
 Route::get('students', 'StudentController@index')->name('students');
 Route::get('classes', 'ClassRoomController@index')->name('classes');
+
+//admin
+// Route::get('admins', 'AdminController@index')->name('admins');
+
+// Route::get('users', 'UserController@index')->name('users');
+Route::get('admins', function () {
+    return view('admins');
+});
+
+Route::get('users', function () {
+    return view('users');
+});
+
+Route::get('/admin_temp', function () {
+    return view('admin.class');
+});

@@ -17,8 +17,9 @@ class ClassRoomController extends Controller
     public function index()
     {
         $this->_data['classes'] = ClassRoom::all();
+        $this->_data['class_id_2'] = ClassRoom::where('id', 2)->get();
 
-        return view('class', $this->_data);
+        return view('admin.class', $this->_data);
     }
 
     /**
