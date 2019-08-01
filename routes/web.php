@@ -40,3 +40,6 @@ Route::get('users', function () {
 Route::get('/admin_temp', function () {
     return view('admin.class');
 });
+
+Route::get('classes/add', 'ClassRoomController@createForm')->name('class.add');
+Route::post('classes/create-post', 'ClassRoomController@create')->name('class.create-post');

@@ -240,8 +240,8 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+      <li class="active"><a href="{{route('classes')}}"><i class="fa fa-link"></i> <span>Class</span></a></li>
+      <li><a href="{{route('class.add')}}"><i class="fa fa-link"></i> <span>Add Class</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
             <span class="pull-right-container">
@@ -277,7 +277,7 @@
 
 
     <!-- Main content -->
-    <section class="content container-fluid">
+    <section class="container-fluid">
       <!--------------------------
         | Your Page Content Here |
         -------------------------->

@@ -15,7 +15,7 @@
     
                 </tr>
             </thead>
-            @include('admin.class_detail', ['class' => $class_id_2])
+            @include('admin.class_detail', ['class' => $classes])
         </table>
         
     </div>

@@ -17,7 +17,7 @@ class ClassRoomController extends Controller
     public function index()
     {
         $this->_data['classes'] = ClassRoom::all();
-        $this->_data['class_id_2'] = ClassRoom::where('id', 2)->get();
+        // $this->_data['class_id_2'] = ClassRoom::where('id', 2)->get();
 
         return view('admin.class', $this->_data);
     }
@@ -27,8 +27,34 @@ class ClassRoomController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createForm()
     {
+        return view('admin.add_class');
+    }
+
+    public function create(Request $request)
+    {
+        $this->validate($request,
+        [
+            'name' => 'required|min:8|string',
+            'teacher_name' => 'required|string|min:5|max:50',
+            'major' => 'required',
+            'max_student' => 'nullable|numeric',
+        ]
+        );
+
+        $data = $request->except('_token');
+        // dd($data);
+
+        $class = new ClassRoom();
+        $class->name = $data['name'];
+        $class->teacher_name = $data['teacher_name'];
+        $class->major = $data['major'];
+        $class->max_student = $data['max_student'];
+        $class->save();
+        $this->_data['classes'] = $class;
+
+        return view('admin.class', $this->_data);
     }
 
     /**

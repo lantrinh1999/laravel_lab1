@@ -1,12 +1,11 @@
 <tbody>
-    
-    @foreach ($class_id_2 as $item)
+    @foreach ($class as $item)
         <tr>
             <td>
-                {{$item->id}}
+                {{$item['name']}}
             </td>
             <td>
-                {{$item->name}}
+                {{$item['major']}}
             </td>
             <td>
                 
